@@ -1,0 +1,32 @@
+version: '3'
+services:
+
+#  rest-service:
+#    container_name: rest-service
+#    build: .
+#    ports:
+#      - "8080:8080"
+#    depends_on:
+#      - postgres
+#    environment:
+#      POSTGRES_HOST: postgres
+#      POSTGRES_PORT: 5432
+#      POSTGRES_DATABASE: postgresql
+#      POSTGRES_USERNAME: diasoft
+#      POSTGRES_PASSWORD: diasoft
+#      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/postgresql
+
+  postgres:
+    container_name: postgres
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: postgresql
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    volumes:
+      - postgres:/data/postgres
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgres:

@@ -1,0 +1,5 @@
+rootProject.name = 'money-transferer'
+
+include 'gateway', 'registry', 'utils', 'user'
+
+rootProject.children.each { it.name = "${rootProject.name}-${it.name}" }
